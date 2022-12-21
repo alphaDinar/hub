@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-b%+82g4n+gvi9b*-#x@tz21!d*t+dcrc-^mqpg78x-l_d+z$ny
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+#CSRF_TRUSTED_ORIGINS = ['https://edmanager-production.up.railway.app']
 
 # Application definition
 
