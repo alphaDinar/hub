@@ -58,9 +58,9 @@ def sms(request):
       "title": "string",
       "description": "string",
       "clientReference": 'string',
-      "callbackUrl": 'https://hub-production-ed85.up.railway.app/callback',
-      "cancellationUrl": "https://hub-production-ed85.up.railway.app/cancel",
-      "returnUrl": "https://hub-production-ed85.up.railway.app/return",
+      "callbackUrl": 'https://web-production-0768.up.railway.app/callback',
+      "cancellationUrl": "https://web-production-0768.up.railway.app/cancel",
+      "returnUrl": "https://web-production-0768.up.railway.app/return",
   }  
 
   headers = {
@@ -72,8 +72,8 @@ def sms(request):
 
   lin = json.loads(response.text)['data']['paylinkUrl']
 
-  t = requests.post('https://hub-production-ed85.up.railway.app/callback')
-  
+  t = requests.post('https://web-production-0768.up.railway.app/callback')
+
   context = {
     'x' : lin,
     't' : t.text
