@@ -78,8 +78,11 @@ def sms(request):
 
 
 def callback(request):
-  requests.post()
-  return render(request, 'callback.html')
+  t = requests.get('https://hub-production-ed85.up.railway.app/callback')
+  context = {
+    't' : t.text
+  }
+  return render(request, 'callback.html', context)
 
 def cancel(request):
   return render(request, 'cancel.html')
