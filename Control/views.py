@@ -78,7 +78,7 @@ def sms(request):
 
 
 def callback(request):
-  t = requests.get('https://hub-production-ed85.up.railway.app/callback')
+  t = requests.post('https://hub-production-ed85.up.railway.app/callback')
   context = {
     't' : t.text
   }
