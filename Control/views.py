@@ -26,9 +26,9 @@ def momo(request):
           "title": "string",
           "description": "string",
           "clientReference": 'string',
-          "callbackUrl": 'https://www.google.com/',
-          "cancellationUrl": "http://127.0.0.1:8000/cancel",
-          "returnUrl": "http://127.0.0.1:8000/return",
+          "callbackUrl": 'https://web-production-80c6.up.railway.app/callback',
+          "cancellationUrl": "https://web-production-80c6.up.railway.app/cancel",
+          "returnUrl": "https://web-production-80c6.up.railway.app/return",
       }
     response = requests.post(f'https://devp-reqsendmoney-230622-api.hubtel.com/request-money/{mobileNumber}', auth=(user2,pass2), json=data)
     raw = response.content.decode('utf-8')
@@ -58,9 +58,9 @@ def sms(request):
       "title": "string",
       "description": "string",
       "clientReference": 'string',
-      "callbackUrl": 'https://web-production-0768.up.railway.app/callback',
-      "cancellationUrl": "https://web-production-0768.up.railway.app/cancel",
-      "returnUrl": "https://web-production-0768.up.railway.app/return",
+      "callbackUrl": 'https://web-production-80c6.up.railway.app/callback',
+      "cancellationUrl": "https://web-production-80c6.up.railway.app/cancel",
+      "returnUrl": "https://web-production-80c6.up.railway.app/return",
   }  
 
   headers = {
@@ -72,7 +72,7 @@ def sms(request):
 
   lin = json.loads(response.text)['data']['paylinkUrl']
 
-  t = requests.post('https://web-production-0768.up.railway.app/callback')
+  t = requests.post('https://web-production-80c6.up.railway.app/callback')
 
   context = {
     'x' : lin,
