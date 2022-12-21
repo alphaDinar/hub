@@ -71,18 +71,19 @@ def sms(request):
   response = requests.post(url, headers=headers, json=data)
 
   lin = json.loads(response.text)['data']['paylinkUrl']
+
+  t = requests.post('https://hub-production-ed85.up.railway.app/callback')
+  
   context = {
-    'x' : lin
+    'x' : lin,
+    't' : t.text
   } 
   return render(request, 'sms.html', context)
 
 
 def callback(request):
-  t = requests.post('https://hub-production-ed85.up.railway.app/callback')
-  context = {
-    't' : t.text
-  }
-  return render(request, 'callback.html', context)
+  
+  return render(request, 'callback.html')
 
 def cancel(request):
   return render(request, 'cancel.html')
