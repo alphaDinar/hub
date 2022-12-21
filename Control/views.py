@@ -58,9 +58,9 @@ def sms(request):
       "title": "string",
       "description": "string",
       "clientReference": 'string',
-      "callbackUrl": 'https://web-production-80c6.up.railway.app/callback',
-      "cancellationUrl": "https://web-production-80c6.up.railway.app/cancel",
-      "returnUrl": "https://web-production-80c6.up.railway.app/return",
+      "callbackUrl": 'https://web-production-80c6.up.railway.app/callback/',
+      "cancellationUrl": "https://web-production-80c6.up.railway.app/cancel/",
+      "returnUrl": "https://web-production-80c6.up.railway.app/return/",
   }  
 
   headers = {
@@ -72,11 +72,8 @@ def sms(request):
 
   lin = json.loads(response.text)['data']['paylinkUrl']
 
-  t = requests.post('https://web-production-80c6.up.railway.app/callback')
-
   context = {
-    'x' : lin,
-    't' : t.text
+    'x' : lin
   } 
   return render(request, 'sms.html', context)
 
