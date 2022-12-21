@@ -68,7 +68,7 @@ def sms(request):
       "content-type": "application/json",
       "authorization": "Basic ZXZ2aW91aHU6bHJybmVia2I="
   }
-  response = requests.post(url, headers=headers, json=data)
+  response = requests.post(url, headers=headers, data=json.dumps(data))
 
   lin = json.loads(response.text)['data']['paylinkUrl']
 
