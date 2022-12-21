@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+
+
+{% block content %}
+  Momo
+  Take from customer
+  <form method="post">
+    {% csrf_token %}
+    <div>mobile = <input type="tel" name="mobile"></div>
+    <div>amount = <input type="number" name="amount" step="0.01"></div>
+    <div>reference = <input type="text" name="ref"></div>
+    <button type="submit">SEND</button>
+  </form>
+{% endblock content %}
+
+
+  
